@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RoadFix - Report Road Damage</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>RoadFix</h1>
+    <p>Report a pothole or road damage · Chennai South zone</p>
+  </header>
+
+  <section class="card">
+    <h2>Submit a report</h2>
+    <form id="reportForm">
+      <input type="file" name="photo" accept="image/*" required>
+      <input type="text" name="road_name" placeholder="Road name" required>
+      <input type="email" name="citizen_email" placeholder="Your email (optional, for updates)">
+      <p>Click on the map to set the location:</p>
+      <div id="pickMap" style="height:300px; border-radius:8px; margin-bottom:10px;"></div>
+      <input type="hidden" name="lat" id="lat" required>
+      <input type="hidden" name="lng" id="lng" required>
+      <button type="submit">Submit report</button>
+    </form>
+    <p id="reportResult"></p>
+  </section>
+
+  <section class="card">
+    <h2>Check your ticket status</h2>
+    <input type="text" id="lookupCode" placeholder="e.g. RF-1042">
+    <button id="lookupBtn">Check status</button>
+    <div id="lookupResult"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="citizen.js"></script>
+</body>
+</html>

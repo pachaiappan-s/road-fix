@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RoadFix Admin Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="admin-header">
+    <div>
+      <h1>RoadFix</h1>
+      <p>Road damage tickets · Chennai South zone</p>
+    </div>
+    <a href="/logout" class="logout-link">Logout</a>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="card">
+    <h2>Ticket map</h2>
+    <div id="map" style="height:400px; border-radius:8px;"></div>
+  </section>
+
+  <section class="card">
+    <h2>Repair priority</h2>
+    <table id="ticketTable">
+      <thead>
+        <tr><th>#</th><th>Ticket & Location</th><th>Damage</th><th>Severity</th>
+        <th>Reports</th><th>Days Open</th><th>Priority</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="card" id="detailPanel" style="display:none;">
+    <h2 id="detailTitle"></h2>
+    <div id="detailBody"></div>
+    <div class="status-buttons">
+      <button data-status="Reported">Reported</button>
+      <button data-status="Verified">Verified</button>
+      <button data-status="Assigned">Assigned</button>
+      <button data-status="Fixed">Fixed</button>
+      <button id="downloadPdfBtn">Download PDF work order</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Ticket pipeline</h2>
+    <div class="pipeline" id="pipeline"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

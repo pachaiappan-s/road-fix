@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RoadFix - Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <div class="login-box">
+    <h1>RoadFix Admin</h1>
+    <p>Sign in to manage tickets</p>
+    <form method="POST" action="/login">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginError" class="error-text"></p>
+    <p class="hint">Demo credentials: admin / admin123</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error")) {
+      document.getElementById("loginError").innerText = "Invalid username or password";
+    }
+  </script>
+</body>
+</html>
